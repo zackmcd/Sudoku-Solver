@@ -36,7 +36,7 @@ istream& operator>> (istream &is, Solver &solver)
 
     if(row != 0 && (row % (int) sqrt(d)) == 0)
       is.getline(n, 80);
-    
+
     for(int i = 0; i < strlen(n); i++)
     {
       if(isdigit(n[i]))
@@ -51,7 +51,7 @@ istream& operator>> (istream &is, Solver &solver)
   } // loops through txt file
 
   solver.print();
-  return is; 
+  return is;
 } //operator>>
 
 void Solver::insert(int row, int col, int num, Solver &solver)
@@ -65,7 +65,7 @@ void Solver::print() const
   int domain = (int) sqrt(d);
 
   for(int i = 0; i < size; i++)
-  {  
+  {
     for(int j = 0; j < size; j++)
     {
       if(j != 0 && (j % domain == 0))
@@ -110,7 +110,7 @@ bool Solver::solve()
   }
 
   return false;
-} //solve() 
+} //solve()
 
 bool Solver::rules(int r, int c, int num)
 {
@@ -124,7 +124,7 @@ bool Solver::numInRow(int r, int num)
   for(int c = 0; c < size; c++)
     if(puzzle[r][c] == num)
       return true;
-  
+
   return false;
 } // numInRow()
 
@@ -153,6 +153,6 @@ bool Solver::openSpot(int &r, int &c)
     for(c = 0; c < size; c++)
       if(puzzle[r][c] == 0)
         return true;
-  
+
   return false;
 } // emptyCell()
